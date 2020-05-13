@@ -1,12 +1,12 @@
 {
-	"client":{
-		"cp_id":"1340007000005167671",
-		"product_id":"736430079244445821",
-		"client_id":"360877868596593728",
-		"client_secret":"7F89D3AD7ACBDD21AD6F059971989F2FE0B1FE8860685893A718493B1F9002EE",
-		"app_id":"102204383",
-		"package_name":"ru.lionzxy.testhmsapplication",
-		"api_key":"CV7iOZ2uXrlpoqYwxv+1cpXzj3rlErpgdzRWIjlrrU6cqZHN6Rl+07A7IV3NF1xa7GlMucM+9lRZBWZcT5fSnKqPLGag"
-	},
-	"configuration_version":"1.0"
+  "client": {
+    "cp_id": "1340007000005167671",
+    "product_id": "736430079244445821",
+    "client_id": "360877868596593728",
+    "client_secret": "7F89D3AD7ACBDD21AD6F059971989F2FE0B1FE8860685893A718493B1F9002EE",
+    "app_id": "102204383",
+    "package_name": "ru.lionzxy.testhmsapplication",
+    "api_key": "CV7iOZ2uXrlpoqYwxv+1cpXzj3rlErpgdzRWIjlrrU6cqZHN6Rl+07A7IV3NF1xa7GlMucM+9lRZBWZcT5fSnKqPLGag"
+  },
+  "configuration_version": "1.0"
 }

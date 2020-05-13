@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -35,6 +36,9 @@ android {
 
 dependencies {
     implementation 'com.huawei.agconnect:agconnect-core:1.0.0.300'
+    implementation "com.huawei.hms:push:+"
+
+    //implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.2.0'

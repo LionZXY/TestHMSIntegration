@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "347194191814",
+    "firebase_url": "https://huawei-hms-test.firebaseio.com",
+    "project_id": "huawei-hms-test",
+    "storage_bucket": "huawei-hms-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347194191814:android:f9f0931130184008a4ccc7",
+        "android_client_info": {
+          "package_name": "ru.lionzxy.testhmsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347194191814-v9lfj8n3lugorooi6ev41li073cr5jrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANEnoJ7jeEENQNUV82E8zYwW2AWPJBIBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347194191814-v9lfj8n3lugorooi6ev41li073cr5jrt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

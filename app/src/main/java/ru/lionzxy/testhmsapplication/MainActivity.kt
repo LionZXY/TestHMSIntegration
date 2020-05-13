@@ -1,23 +1,27 @@
 package ru.lionzxy.testhmsapplication
 
+import android.content.Context
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.huawei.agconnect.config.AGConnectServicesConfig
+import com.huawei.hms.aaid.HmsInstanceId
+import com.huawei.hms.api.ConnectionResult
+import com.huawei.hms.api.HuaweiApiAvailability
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
+    private val TAG = "PushDemoLog"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        if (isHmsAvailable(this)) {
+            requestTokenHMS()
         }
     }
 
@@ -35,5 +39,31 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun requestTokenHMS() {
+        Thread(
+            Runnable {
+                val startTime = System.currentTimeMillis()
+                val appId = AGConnectServicesConfig.fromContext(this).getString("client/app_id")
+                val pushtoken = HmsInstanceId.getInstance(this).getToken(appId, "HCM");
+                showToken(pushtoken, System.currentTimeMillis() - startTime)
+            }).start()
+    }
+
+    private fun showToken(pushtoken: String, diff: Long) {
+        runOnUiThread {
+            Toast.makeText(
+                this,
+                "Push-token: $pushtoken. Time: $diff",
+                Toast.LENGTH_LONG
+            ).show();
+        }
+    }
+
+    fun isHmsAvailable(context: Context): Boolean {
+        val result =
+            HuaweiApiAvailability.getInstance().isHuaweiMobileServicesAvailable(context)
+        return ConnectionResult.SUCCESS == result
     }
 }
